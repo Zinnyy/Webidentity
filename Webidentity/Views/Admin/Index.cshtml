@@ -1,0 +1,91 @@
+﻿@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row pt-4 pb-23">
+    <div class="col-6">
+        <h2 class="text-primary"> Hello Admin</h2>
+    </div>
+
+</div>
+
+<table class="table table-bordered  table-striped">
+    <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email </th>
+            <th>Location </th>
+            <th>Phone</th>
+            <th>Bio </th>
+
+            <th class="text-center">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var obj in Model) { 
+        <tr>
+            <td>@obj.FistName</td>
+            <td>@obj.Lastname</td>
+            <td>@obj.Email</td>
+            <td>@obj.Location</td>
+            <td>@obj.Phone</td>
+            <td>@obj.Bio</td>
+            <td>
+                <div class="w-75 btn-group" role="group">
+                    <a asp-controller="Admin" asp-route-id="@obj.Id" asp-action="Edit"
+                       class="btn btn-primary mx-2 rounded text-light">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    <a asp-controller="Admin" asp-route-id="@obj.Id" asp-action="Activate"
+                           class="btn btn-secondary mx-2 rounded text-light">
+                        <i class="bi bi-trash3-fill"></i> Activate
+                    </a>
+                        <a asp-controller="Admin" asp-route-id="@obj.Id" asp-action="Delete"
+                           class="btn btn-danger mx-2 rounded text-light">
+                            <i class="bi bi-trash3-fill"></i> Deactivate
+                        </a>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+@using Webidentity.Areas.Identity.Data;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (User.IsInRole("Admin"))
+{
+    <h1>Hello Admin!</h1>
+}
+else
+{
+    <h1>You are not a admin</h1>
+}*@

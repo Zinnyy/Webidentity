@@ -1,0 +1,104 @@
+﻿@using Webidentity.Areas.Identity.Data;
+
+@model ApplicationUser
+
+
+
+<div class="card shadow border-0 mt-4">
+<div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="text-primary">Edit Information</h2>
+        </div>
+    </div>
+</div>
+<div class="card-body p-4">
+        <form method="post">
+            @*<input asp-for="Id" hidden>*@
+            <div class="border p-3 mt-4">
+             
+                <div class="form-floating py-2 col-12">
+                    
+                    <input asp-for="FistName" class="form-control border-0 shadow" >
+                    <label asp-for="FistName" class="ms-2"></label>
+                    <span asp-validation-for="FistName" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                 
+                    <input asp-for="Lastname" class="form-control border-0 shadow" >
+                    <label asp-for="Lastname" class="ms-2"></label>
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Email" class="form-control border-0 shadow" >
+                    <label asp-for="Email" class="ms-2"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Location" class="form-control border-0 shadow" >
+                    <label asp-for="Location" class="ms-2"></label>
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Phone" class="form-control border-0 shadow" >
+                    <label asp-for="Phone" class="ms-2"></label>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Bio" class="form-control border-0 shadow" >
+                    <label asp-for="Bio" class="ms-2"></label>
+                    <span asp-validation-for="Bio" class="text-danger"></span>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Update</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary border form-control">Cancel</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+</div>
+</div>
+
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+
+
+
+@*<form asp-action="EditProfile" method="post">
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" name="FistName" value="@Model.FistName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.Lastname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.Location" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.Bio" class="form-control" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>*@

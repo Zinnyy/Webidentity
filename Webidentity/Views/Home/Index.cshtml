@@ -1,0 +1,77 @@
+﻿@using Webidentity.Areas.Identity.Data
+@model ApplicationUser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @*<p>User Id: @ViewData["UserID"]</p>*@
+</div>
+
+
+<h2>Welcome, @Model.FistName</h2>
+
+
+
+<div class="container py-8 px-3">
+
+    <div class="row pt-4 pb-23">
+        <div class="col-6">
+            <h2 class="text-primary"> Your Details</h2>
+        </div>
+      
+    </div>
+
+    <table class="table table-bordered  table-striped">
+        <thead>
+
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email </th>
+                <th>Location </th>
+                <th>Phone</th>
+                <th>Bio </th>
+
+                <th class="text-center">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+          
+            
+                <tr>
+                <td>@Model.FistName</td>
+                <td>@Model.Lastname</td>
+                <td>@Model.Email</td>
+                <td>@Model.Location</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Bio</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Home" asp-route-id="@ViewData["UserID"]" asp-action="EditProfile"
+                               class="btn btn-info mx-2 rounded">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+@using Microsoft.AspNetCore.Identity
+
+
+
+
+
+@*@if (User.IsInRole("Admin"))
+{
+    <h1>Hello Admin!</h1>
+}
+else
+{
+    <h1>You are not a admin</h1>
+}*@
